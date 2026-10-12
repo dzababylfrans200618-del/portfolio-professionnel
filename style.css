@@ -2661,3 +2661,89 @@ button:focus-visible {
         transition: none !important;
     }
 }
+/* ========================================
+   16. ANIMATIONS ET FINITIONS
+======================================== */
+
+/* Apparence fluide des cartes */
+.galerie-item,
+.projet,
+.competence,
+.formation {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Léger effet au survol */
+.galerie-item:hover,
+.projet:hover,
+.competence:hover,
+.formation:hover {
+    transform: translateY(-5px);
+}
+
+/* Images de la galerie */
+.galerie-item img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Image légèrement agrandie au survol */
+.galerie-item:hover img {
+    transform: scale(1.02);
+}
+
+/* Texte d'introduction de la galerie */
+.galerie-intro {
+    max-width: 750px;
+    margin: 0 auto 30px;
+    text-align: center;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Boutons plus réactifs */
+button,
+.btn,
+#accueil > a {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover,
+.btn:hover,
+#accueil > a:hover {
+    transform: translateY(-2px);
+}
+
+/* Préserver le confort des personnes
+   qui préfèrent moins d'animations */
+@media (prefers-reduced-motion: reduce) {
+    .galerie-item,
+    .projet,
+    .competence,
+    .formation,
+    .galerie-item img,
+    button,
+    .btn,
+    #accueil > a {
+        transition: none !important;
+    }
+
+    .galerie-item:hover,
+    .projet:hover,
+    .competence:hover,
+    .formation:hover,
+    button:hover,
+    .btn:hover,
+    #accueil > a:hover {
+        transform: none;
+    }
+}
